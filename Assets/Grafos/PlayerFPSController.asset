@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e66c6366d904e98bc83428217d4fd7, type: 3}
+  m_Name: PlayerFPSController
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":-6084.026,"y":12676.41},"zoom":0.5999999,"elements":[{"coroutine":false,"defaultValues":{},"position":{"x":-673.0,"y":-753.0},"guid":"0c021478-ea97-4e2e-99eb-291b41bf0767","$version":"A","$type":"Unity.VisualScripting.Start","$id":"9"},{"coroutine":false,"defaultValues":{},"position":{"x":-660.0,"y":110.0},"guid":"ef0d6be3-b339-419b-84b7-fb423cd4697a","$version":"A","$type":"Unity.VisualScripting.Update"},{"coroutine":false,"defaultValues":{"button":{"$content":"Left","$type":"Unity.VisualScripting.MouseButton"},"action":{"$content":"Down","$type":"Unity.VisualScripting.PressState"}},"position":{"x":-392.0,"y":-611.0},"guid":"8dbdb086-7288-41c8-896b-74e86dd78f4f","$version":"A","$type":"Unity.VisualScripting.OnMouseInput"},{"coroutine":false,"defaultValues":{"target":null},"position":{"x":-191.0,"y":-723.0},"guid":"300fd2de-6e0d-4b4a-8a33-9897441a2525","$version":"A","$type":"Unity.VisualScripting.OnMouseExit"},{"chainable":false,"member":{"name":"lockState","parameterTypes":null,"targetType":"UnityEngine.Cursor","targetTypeName":"UnityEngine.Cursor","$version":"A"},"defaultValues":{"input":{"$content":"Locked","$type":"UnityEngine.CursorLockMode"}},"position":{"x":-497.0,"y":-769.0},"guid":"dc4f592e-1203-4192-8fec-93281d0ac58b","$version":"A","$type":"Unity.VisualScripting.SetMember","$id":"17"},{"coroutine":false,"defaultValues":{},"position":{"x":-741.0,"y":-338.0},"guid":"d466658c-638b-4f77-b9fd-d94c6006b197","$version":"A","$type":"Unity.VisualScripting.Update"},{"sourceUnit":{"$ref":"9"},"sourceKey":"trigger","destinationUnit":{"$ref":"17"},"destinationKey":"assign","guid":"e2df2b23-5678-4093-87e5-8231296f1a2c","$type":"Unity.VisualScripting.ControlConnection"}],"$version":"A"}}'
+    _objectReferences: []
