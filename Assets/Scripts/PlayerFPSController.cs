@@ -2,27 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(MouseLook))]
 public class PlayerFPSController : MonoBehaviour
 {
     public GameObject cam;
     public float walkSpeed = 5f;              // Walk speed
     public float hRotationSpeed = 100f;       // Player rotates along y axis
     public float vRotationSpeed = 80f;        // Cam rotates along x axis
-    
+    private CharacterMovement characterMovement;
+    private MouseLook mouseLook;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         // Oculta el ratón
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
+        // Busca al objeto de nombre "Body" y lo deshabilita en pantalla
+
         GameObject.Find("Body").gameObject.SetActive(false);
+
+        characterMovement = GetComponent<CharacterMovement>();
+        mouseLook = GetComponent<MouseLook>();
+
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         movement();
+        rotation();
     }
     private void movement()
     {
@@ -30,14 +42,17 @@ public class PlayerFPSController : MonoBehaviour
         float hMovement = Input.GetAxisRaw("Horizontal");
         float vMovement = Input.GetAxisRaw("Vertical");
 
-        Vector3 movementDirection = hMovement * Vector3.right + vMovement * Vector3.forward;
-        transform.Translate(movementDirection * (walkSpeed * Time.deltaTime));
+        bool jumpInput = Input.GetButtonDown("Jump");
+        bool dashInput = Input.GetButtonDown("Dash");
 
-        // Rotación
-        float vCamRotation = Input.GetAxis("Mouse Y") * vRotationSpeed * Time.deltaTime;
-        float hPlayerRotation = Input.GetAxis("Mouse X") * hRotationSpeed * Time.deltaTime;
-
-        transform.Rotate(0f, hPlayerRotation, 0f);
-        cam.transform.Rotate(-vCamRotation, 0f, 0f);
+        characterMovement.moveCharacter(hMovement, vMovement, jumpInput, dashInput);
     }
-}
+
+    private void rotation()
+    {
+        float hRotationInput = Input.GetAxis("Mouse X");
+        float vRotationInput = Input.GetAxis("Mouse Y");
+
+        mouseLook.handleRotation(hRotationInput, vRotationInput);
+    }
+} 

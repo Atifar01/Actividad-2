@@ -58,10 +58,12 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\HelloWorld.cs" />
     <Compile Include="Assets\Scripts\CapsuleRotation.cs" />
+    <Compile Include="Assets\Scripts\PlayerFPSController.cs" />
     <Compile Include="Assets\Scripts\CapsuleScaling.cs" />
     <Compile Include="Assets\Scripts\PlayerTankController.cs" />
     <Compile Include="Assets\Scripts\CapsuleMovement.cs" />
-    <Compile Include="Assets\Scripts\PlayerFPSController.cs" />
+    <Compile Include="Assets\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\Scripts\CharacterMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
